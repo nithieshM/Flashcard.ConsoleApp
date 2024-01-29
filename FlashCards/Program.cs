@@ -1,20 +1,23 @@
-﻿using Npgsql;
+﻿using System.Configuration;
+using Npgsql;
 
 namespace FlashCards;
 
 class Program
 {
+    internal static string connectionString = ConfigurationManager.ConnectionStrings["FlashCards"].ConnectionString;
     static void Main(string[] args)
     {
-        string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=Aedwasd*2001;Database=postgres";
+        
         NpgsqlConnection connection = new NpgsqlConnection(connectionString);
         
         connection.Open();
 
         var tablecmd = connection.CreateCommand();
-        tablecmd.CommandText = @"CREATE TABLE IF NOT EXISTS flashcards (
+        tablecmd.CommandText = @"CREATE TABLE IF NOT EXISTS flashcards1 (
     Id SERIAL PRIMARY KEY,
-    Date TIMESTAMP
+    Date TIMESTAMP,
+    test INTEGER
 )";
         tablecmd.ExecuteNonQuery();
         connection.Close();
