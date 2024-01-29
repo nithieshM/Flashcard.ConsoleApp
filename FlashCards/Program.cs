@@ -1,4 +1,4 @@
-﻿Inamespace FlashCards;
+﻿namespace FlashCards;
 
 class Program
 {
