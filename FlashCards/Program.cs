@@ -17,7 +17,8 @@ class Program
         tablecmd.CommandText = @"CREATE TABLE IF NOT EXISTS flashcards1 (
     Id SERIAL PRIMARY KEY,
     Date TIMESTAMP,
-    test INTEGER
+    test INTEGER,
+    StackCount INTEGER                                       
 )";
         tablecmd.ExecuteNonQuery();
         connection.Close();
