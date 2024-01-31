@@ -31,7 +31,7 @@ public class Menu
                 }
                 case "1":
                 {
-                    //add();
+                    add();
                     break;
                 }
                 case "2":
